@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Teks dengan Musik dan Stiker</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://preview.redd.it/desktop-wallpaper-based-on-the-album-cover-v0-axnmwxmdw7a91.jpg?width=1080&crop=smart&auto=webp&s=b7100f1db4ac59998ebc9d9d603e6b588f7e6b2c');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .animated-text {
+            font-size: 2.5rem;
+            color: #61dafb;
+            border-right: 4px solid #61dafb;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 5s steps(40, end) 1s 1 normal both;
+            margin: 0 auto;
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        .spotify-player {
+            margin-top: 20px;
+        }
+        .sticker {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 80px; /* Ukuran yang lebih kecil untuk perangkat seluler */
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Responsif untuk perangkat seluler */
+        @media (max-width: 768px) {
+            .animated-text {
+                font-size: 1.5rem; /* Ukuran teks lebih kecil pada perangkat seluler */
+            }
+            .sticker {
+                width: 60px; /* Ukuran stiker lebih kecil pada perangkat seluler */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .animated-text {
+                font-size: 1.2rem; /* Ukuran teks lebih kecil untuk layar sangat kecil */
+            }
+            .sticker {
+                width: 50px; /* Ukuran stiker lebih kecil untuk layar sangat kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="animated-text">𝒽𝒶𝓁𝑜 𝓏𝒶𝓃 𝑔𝓊𝒶 𝓂𝒶𝓀𝒾𝓃𝑔 𝑔𝒶𝒷𝓊𝓉</div>
+        <div class="spotify-player">
+            <!-- Spotify Embed -->
+            <iframe src="https://open.spotify.com/embed/track/1fDFHXcykq4iw8Gg7s5hG9?si=ec299e55536c4b68" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+</body>
+</html>
